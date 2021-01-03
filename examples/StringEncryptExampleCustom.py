@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+
+###############################################################################
+#
+# String Encrypt WebApi interface usage example.
+#
+# In this example we will encrypt sample strings with custom options.
+#
+# Version        : v1.0
+# Language       : Python
+# Author         : Bartosz Wójcik
+# Project page   : https://www.stringencrypt.com
+# Web page       : https://www.pelock.com
+#
+###############################################################################
+
+#
+# include StringEncrypt module
+#
+from stringencrypt import StringEncrypt
+
+#
+# if you don't want to use Python module, you can import it directly from the file
+#
+#from stringencrypt.stringencrypt import StringEncrypt
+
+
+def print_results(result):
+
+    #
+    # result[] array holds the encryption results as well as other information
+    #
+    # result["error"] (int) - error code
+    # result["error_string"] (string) - error code as a string
+    # result["source"] (string) - decryptor source code
+    # result["expired"] (boolean) - expiration flag
+    # result["credits_left"] (int) - number of credits left
+    # result["credits_total"] (int) - initial number of credits
+
+    if result and "error" in result:
+
+        # display source code of the decryption code
+        if result["error"] == StringEncrypt.ErrorCodes.ERROR_SUCCESS:
+            print(result["source"])
+        else:
+            print(f'An error occurred, error code: {result["error"]} ({result["error_string"]})')
+
+    else:
+        print("Something unexpected happen while trying to encrypt the string.")
+
+
+#
+# create StringEncrypt class instance (we are using our activation code)
+#
+myStringEncrypt = StringEncrypt("ABCD-ABCD-ABCD-ABCD")
+
+#
+# encrypt a string using all the default options
+#
+result = myStringEncrypt.encrypt_string("Hello", "label")
+print_results(result)
+
+#
+# lets change the output programming language into C++
+#
+myStringEncrypt.outputProgrammingLanguage = StringEncrypt.OutputProgrammingLanguages.LANG_CPP
+
+result = myStringEncrypt.encrypt_string("C++", "wszLbl")
+print_results(result)
+
+#
+# change the encoding of the string to ANSI
+#
+myStringEncrypt.useUnicode = False
+
+result = myStringEncrypt.encrypt_string("ANSI!", "szLbl")
+print_results(result)
+
+#
+# change to JavaScript language output and see the difference
+# between local variable encoding and global variable encoding
+#
+myStringEncrypt.useUnicode = True
+myStringEncrypt.outputProgrammingLanguage = StringEncrypt.OutputProgrammingLanguages.LANG_JS
+myStringEncrypt.declareAsLocalVariable = True
+
+result = myStringEncrypt.encrypt_string("Local", "local")
+print_results(result)
+
+#
+# switch to global variable encoding (if possible for the programming language)
+#
+myStringEncrypt.declareAsLocalVariable = False
+
+result = myStringEncrypt.encrypt_string("Global", "global")
+print_results(result)
