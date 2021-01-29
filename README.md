@@ -1,7 +1,7 @@
 # StringEncrypt — String & File Encryption for Python Developers
 
 StringEncrypt allows you to **encrypt strings and files** using
-randomly generated algorithm, generating a unique decryption code
+a randomly generated algorithm, generating a unique decryption code
 (so-called *polymorphic code*) each time in the selected programming
 language.
 
