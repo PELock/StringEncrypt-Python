@@ -703,7 +703,7 @@ end
 puts ruby
 ```
 
-```AutoIt encryption (UNICODE example)
+### AutoIt encryption (UNICODE example)
 
 ```autoit
 ; encrypted with https://www.stringencrypt.com (v1.3.0) [AutoIt]
