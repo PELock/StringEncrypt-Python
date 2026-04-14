@@ -1,1 +1,3 @@
-from stringencrypt.stringencrypt import *
+from stringencrypt.stringencrypt import StringEncrypt
+
+__all__ = ("StringEncrypt",)

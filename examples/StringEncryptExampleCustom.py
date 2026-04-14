@@ -6,7 +6,7 @@
 #
 # In this example we will encrypt sample strings with custom options.
 #
-# Version        : v1.0
+# Version        : v1.0.1
 # Language       : Python
 # Author         : Bartosz Wójcik
 # Project page   : https://www.stringencrypt.com
@@ -52,7 +52,7 @@ def print_results(result):
 #
 # create StringEncrypt class instance (we are using our activation code)
 #
-myStringEncrypt = StringEncrypt("ABCD-ABCD-ABCD-ABCD")
+myStringEncrypt = StringEncrypt("YOUR-API-KEY-HERE") # leave empty for demo mode
 
 #
 # encrypt a string using all the default options

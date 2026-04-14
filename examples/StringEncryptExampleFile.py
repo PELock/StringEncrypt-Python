@@ -6,7 +6,7 @@
 #
 # In this example we will encrypt sample file with default options.
 #
-# Version        : v1.0
+# Version        : v1.0.1
 # Language       : Python
 # Author         : Bartosz Wójcik
 # Project page   : https://www.stringencrypt.com
@@ -27,7 +27,7 @@ from stringencrypt import StringEncrypt
 #
 # create StringEncrypt class instance (we are using our activation code)
 #
-myStringEncrypt = StringEncrypt("ABCD-ABCD-ABCD-ABCD")
+myStringEncrypt = StringEncrypt("YOUR-API-KEY-HERE") # leave empty for demo mode
 
 #
 # encrypt current script file using all the default options

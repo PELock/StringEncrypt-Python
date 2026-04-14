@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=77.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stringencrypt"
+version = "1.0.1"
+description = "StringEncrypt page allows you to encrypt strings and files using randomly generated algorithm, generating a unique decryption code (so called polymorphic code) each time in the selected programming language."
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.8"
+authors = [
+    { name = "Bartosz Wójcik", email = "support@pelock.com" },
+]
+keywords = [
+    "encryption",
+    "string",
+    "file",
+    "string-encryption",
+    "file-encryption",
+    "security",
+    "cryptography",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "requests>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "responses>=0.25.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.urls]
+Homepage = "https://www.stringencrypt.com"
+Source = "https://github.com/PELock/StringEncrypt-Python"
+"Bug Tracker" = "https://github.com/PELock/StringEncrypt-Python/issues"
+
+
+[tool.setuptools]
+zip-safe = false
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["stringencrypt*"]
